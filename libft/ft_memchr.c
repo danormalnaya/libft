@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lloko <lloko@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/06 11:37:49 by lloko             #+#    #+#             */
-/*   Updated: 2021/10/17 17:54:44 by lloko            ###   ########.fr       */
+/*   Created: 2021/10/16 19:48:40 by lloko             #+#    #+#             */
+/*   Updated: 2021/10/17 17:55:05 by lloko            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(char c)
+void *ft_memchr(const void *s, int c, size_t n)
 {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+	size_t		i;
+	char		bite;
+	const char	*sec;
+
+	sec = (const char *)s;
+	bite = (char)c;
+	i = 0;
+	while (i < n)
+		{
+			if (sec[i] == bite)
+			{
+				return ((char *)sec + i);
+			}
+			i++;
+		}
+	return (NULL);
 }
