@@ -1,10 +1,10 @@
 NAME	=	 libft.a
 
-CC	=	 gcc
+CC	=	 cc
 
 CFLAGS	=	 -Werror -Wall -Wextra
 
-AR	=	 ar -r
+AR	=	 ar -rcs
 
 SRC	=	ft_bzero.c \
 		ft_isalnum.c \
@@ -25,8 +25,21 @@ SRC	=	ft_bzero.c \
 		ft_strrchr.c \
 		ft_strncmp.c \
 		ft_strlcpy.c \
+		ft_strnstr.c \
+		ft_atoi.c \
+		ft_calloc.c \
+		ft_strdup.c \
+		ft_substr.c \
+		ft_strjoin.c \
+		ft_strtrim.c \
+		ft_strmapi.c \
+		ft_striteri.c \
+		ft_putchar_fd.c \
+		ft_putstr_fd.c \
+		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
-
+		ft_itoa.c \
+		ft_split.c \
 
 OBJS	 =	$(SRC:%.c=%.o)
 
@@ -35,11 +48,11 @@ all	:	$(NAME)
 $(NAME)	: 	$(OBJS) libft.h
 	$(AR) $(NAME) $(OBJS)
 
-%.o	:	%.c
+%.o	:	%.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean	:
-	rm -rf $(OBJS) $(OBJ_BONUS)
+	rm -rf $(OBJS)
 
 fclean	: 	clean
 	rm -rf $(NAME)

@@ -6,9 +6,25 @@
 /*   By: lloko <lloko@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 18:02:31 by lloko             #+#    #+#             */
-/*   Updated: 2021/10/17 18:15:43 by lloko            ###   ########.fr       */
+/*   Updated: 2021/10/27 15:26:44 by lloko            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+void	ft_putstr_fd(char *s, int fd)
+{
+	int	i;
+
+	if (!s)
+		return ;
+	i = 0;
+	if (fd >= 0)
+	{
+		while (s[i])
+		{
+			write(fd, &s[i], 1);
+			i++;
+		}
+	}
+}

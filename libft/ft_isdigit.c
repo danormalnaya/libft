@@ -6,13 +6,13 @@
 /*   By: lloko <lloko@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 11:39:38 by lloko             #+#    #+#             */
-/*   Updated: 2021/10/17 17:51:37 by lloko            ###   ########.fr       */
+/*   Updated: 2021/10/18 14:18:39 by lloko            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(char d)
+int	ft_isdigit(int d)
 {
 	return (d >= '0' && d <= '9');
 }
